@@ -1,0 +1,28 @@
+// Simple Calculator 
+
+#include <bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+ int main(){
+
+    cout<<" !!! Welcome to Basic Calculator Program !!!\n\tTo end program type exit/off "<<endl;
+    while(true){
+        ll a=0, b=0, idx=0;
+        string s;
+        cin>>s;
+        if(s=="EXIT"|| s=="Exit" || s=="exit"|| s=="OFF"|| s=="Off"||s=="off")return 0;
+        char op='?';
+        for(int i=0; i<s.length(); i++){
+            if(s[i]=='+'|| s[i]=='-'|| s[i]=='*'|| s[i]=='/'){op=s[i]; idx=i;}
+        }
+        a=stoi(s.substr(0, idx));
+        b=stoi(s.substr(idx+1, s.length()));
+        cout<<"\t=";
+        if(op=='+') cout<< a+b <<endl;
+        else if(op=='-') cout<< a-b <<endl;
+        else if(op=='*')cout<< a*b <<endl;
+        else if(op=='/')cout<< float(a)/b <<endl;
+        
+    }
+ }
